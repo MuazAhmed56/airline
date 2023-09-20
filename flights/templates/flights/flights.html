@@ -17,5 +17,16 @@ Names:
 <li> NOne </li>
 {% endfor %}
 </ul>
+<h2>Add passanger</h1>
+<form action="{% url 'book' flight.id %}" method="post">
+{% csrf_token %}
+<select name="passangers">
+{% for passanger in non_passangers %}
+<option value="{{passanger.id }}"> {{passanger}}</option>
+{% endfor %}
+</select>
+<input type="submit">
+</form>
+
 <a href="{%url 'index' %}"> Back to flights list </a>
 {% endblock %}
