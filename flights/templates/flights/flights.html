@@ -1,0 +1,21 @@
+{% extends "flights/layout.html" %}
+
+{% block body %}
+<h1>Flight id: {{flights.id}}</h1>
+Flight Details:
+<ul>
+<li>Origin: {{flights.origin}}</li> 
+<li> destination: {{flights.destination}}</li> 
+<li> duration: {{flights.duratation}}</li> 
+</ul>
+<h1>Passangers</h1>
+Names:
+<ul>
+{%for passanger in passangers %}
+<li>{{passanger}}</li>
+{% empty %}
+<li> NOne </li>
+{% endfor %}
+</ul>
+<a href="{%url 'index' %}"> Back to flights list </a>
+{% endblock %}
