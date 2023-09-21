@@ -18,9 +18,9 @@ Names:
 {% endfor %}
 </ul>
 <h2>Add passanger</h1>
-<form action="{% url 'book' flight.id %}" method="post">
+<form action="{% url "book" flights.id %}" method="post">
 {% csrf_token %}
-<select name="passangers">
+<select name="passengers">
 {% for passanger in non_passangers %}
 <option value="{{passanger.id }}"> {{passanger}}</option>
 {% endfor %}
